@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "env": {
+    "MONGODB_URI": "mongodb+srv://strey:XbgeUsiCdX6ZPmNY@cluster0.wxdrc.gcp.mongodb.net/ubinet?retryWrites=true&w=majority"
+  }
+}
