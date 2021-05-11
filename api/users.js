@@ -1,7 +1,7 @@
 // Import Dependencies
-const url = require('url')
-const assert = require('assert');
-const MongoClient = require('mongodb').MongoClient
+import { parse } from 'url';
+import assert from 'assert';
+import { MongoClient } from 'mongodb';
 
 // Create cached connection variable
 let cachedDb = null
@@ -20,7 +20,7 @@ async function connectToDatabase(uri) {
 
   // Select the database through the connection,
   // using the database path of the connection string
-  const db = client.db(url.parse(uri).pathname.substr(1))
+  const db = client.db(parse(uri).pathname.substr(1))
 
   // Cache the database connection and return the connection
   cachedDb = db
@@ -29,7 +29,7 @@ async function connectToDatabase(uri) {
 
 // The main, exported, function of the endpoint,
 // dealing with the request and subsequent response
-module.exports = async (req, res) => {
+export default async (req, res) => {
   // Get a database connection, cached or otherwise,
   // using the connection string environment variable as the argument
   const db = await connectToDatabase(process.env.MONGODB_URI)
