@@ -2,6 +2,7 @@
   "name": "my-mongodb-api",
   "version": "1.0.0",
   "description": "Api sistema de SVG generate",
+  "repository": "https://github.com/speedsul/vercelapi.git",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
